@@ -27,7 +27,8 @@ for data in list_com.itertuples(index=False, name='People'):
 
     if data.Статус != "Руководитель":
         text_head = "{}\n\"{}\"".format (data.Статус, com)
-        text = "{}".format (data.ФИО)
+        fio = data.ФИО.split()
+        text = "{} {}".format (fio[0], fio[1])
     else:
         new_fio = data.ФИО.split()
         new_fio = new_fio[0] + '\n' + new_fio[1] + ' ' + new_fio[2]
